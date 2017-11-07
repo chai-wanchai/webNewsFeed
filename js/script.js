@@ -8,6 +8,9 @@ function Empty() {
   $("#CardPost_Technology").empty();
   $("#HOME").empty();
   $('#CardPost_Sport').empty();
+  $("#CardPost_GoogleNews").empty();
+  $("#CardPost_ReutersNews").empty();
+
 }
 function newsapiFeed(url,tag) {
   $.getJSON(url, function(json) {
@@ -37,11 +40,23 @@ function newsapiFeed(url,tag) {
 }
 function TECHNOLOGY() {
     $('#HeadNews').html('TECHNOLOGY');
-    url ='https://newsapi.org/v1/articles?source=techradar&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
+    url ='https:// .org/v1/articles?source=techradar&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
     Empty();
     newsapiFeed(url,'#CardPost_Technology')
 
 
+}
+function GoogleFeed(){
+  $('#HeadNews').html('Google News');
+  url='https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
+  Empty();
+  newsapiFeed(url,'#CardPost_GoogleNews')
+}
+function Reuters() {
+  $('#HeadNews').html('Reuters News');
+  url='https://newsapi.org/v1/articles?source=reuters&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
+  Empty();
+  newsapiFeed(url,'#CardPost_ReutersNews')
 }
 function Sport() {
   $('#HeadNews').html('Sport');
@@ -91,9 +106,12 @@ function HOME() {
     })
     Technology ='https://newsapi.org/v1/articles?source=techradar&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
     Sport ='https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
+    Google ='https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
+    Reuters ='https://newsapi.org/v1/articles?source=reuters&sortBy=top&apiKey=ebec4c1d39284789b44238f3100eec63'
     newsapiFeed(Technology,'#CardPost_Technology')
     newsapiFeed(Sport,'#CardPost_Sport')
-
+    newsapiFeed(Google,'#CardPost_GoogleNews')
+    newsapiFeed(Reuters,'#CardPost_ReutersNews')
 }
 
 $.getJSON(campJson, function(json) {
