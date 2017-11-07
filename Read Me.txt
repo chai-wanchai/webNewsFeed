@@ -1,0 +1,4 @@
+##############################################################################
+It must to connect internet because we use get json data from website with ajax.
+It has a little showly 
+##############################################################################
